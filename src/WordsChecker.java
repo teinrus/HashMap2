@@ -1,12 +1,10 @@
-
-import java.util.*;
+import java.util.Collections;
+import java.util.HashSet;
 
 public class WordsChecker {
 
     protected String inputText;
-
-    Deque<String> text = new ArrayDeque<>();
-
+    HashSet<String> text = new HashSet<>();
 
     public WordsChecker(String inputText) {
         this.inputText = inputText;
@@ -14,13 +12,7 @@ public class WordsChecker {
     }
 
     protected boolean hasWord(String word) {
-
-        for (String temp : text) {
-            if (temp.equals(word)) {
-                return true;
-            }
-        }
-        return false;
+        return text.contains(word);
     }
 
 }
